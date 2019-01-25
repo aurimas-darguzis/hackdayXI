@@ -21,6 +21,7 @@ import { PrismModule } from '@ngx-prism/core';
 import { CodeSnippetComponent } from './components/shared/code-snippet/code-snippet.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
+import { AaButtonComponent } from './components/shared/aa-button/aa-button.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { CloseButtonComponent } from './components/shared/close-button/close-but
     HomeComponent,
     CodeSnippetComponent,
     CloseButtonComponent,
+    AaButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,19 @@
 <div class="container">
-  <div class="sidenav"></div>
 
-  <div class="mainContent">
-
-  <h1>Buttons & Indicators</h1>
-
-  <app-code-snippet
-    [header]="closeButton.header"
-    [html]="closeButton.html"
-    [sass]="closeButton.sass"
-    [ts]="closeButton.ts"
-  >
-  </app-code-snippet>
-
-  <div class="preview">
-      <div class="aa-close-button fa fa-times"></div>
+  <div class="sidenav">
+    <header>Buttons & Indicators</header>
+    <a routerLink="aaButton">AA Button</a>
+    <a routerLink="closeButton">Close Button</a>
   </div>
+  <div class="mainContent">
+      <router-outlet></router-outlet>
 
-  <hr>
+
+  <!-- <h1>Buttons & Indicators</h1> -->
+
+
+
+  <!-- <hr>
   <app-code-snippet
     [header]="uiMultiSelectRow.header"
     [html]="uiMultiSelectRow.html"
@@ -50,6 +46,6 @@
     ui dropdown preview
   </div>
 
-  </div>
+  </div> -->
 
 </div>
