@@ -1,15 +1,42 @@
+<header>
+  <h1>{{uiSecondaryButton.header}}</h1>
+  <p>
+      This component creates a button.
+      You can specify various properties of it.
+      By default, the background colour will be transparent.
+      You can add primary or success as type property.
+      An icon is optional, but if you do want it - just
+      pass the class name as icon property to the component.
+      You can also specify the size - just specify large, medium,
+      small or xsmall. This button emits an event to the parent component,
+      so the functionality should be implemented by the parent class.
+  </p>
+</header>
 <app-code-snippet
-    [header]="uiSecondaryButton.header"
     [html]="uiSecondaryButton.html"
     [sass]="uiSecondaryButton.sass"
     [ts]="uiSecondaryButton.ts"
   ></app-code-snippet>
-
+<hr>
   <div class="preview">
     <app-aa-secondary-button
-      [label]="'save'"
+      [label]="'primary small'"
+      [size]="'small'"
+      [type]="'primary'"
+      (modelChanged)="mockSave()"
+    ></app-aa-secondary-button>
+    <app-aa-secondary-button
+      [label]="'primary medium'"
       [size]="'medium'"
       [type]="'primary'"
+      [disabled]="true"
+      (modelChanged)="mockSave()"
+    ></app-aa-secondary-button>
+    <app-aa-secondary-button
+      [label]="'success medium'"
+      [size]="'medium'"
+      [type]="'success'"
+      [icon]="'fa-chevron-right'"
       (modelChanged)="mockSave()"
     ></app-aa-secondary-button>
   </div>
