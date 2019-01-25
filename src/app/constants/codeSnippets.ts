@@ -119,7 +119,7 @@ export const uiMultiSelectRow = {
   .content
       display: flex
       transition: border-color 0.15s ease-in-out
-      border: 1px solid $blue-grey
+      border: 1px solid #e1e7f6y
       border-radius: 3px
   &.ng-touched.ng-invalid, &.submitted.ng-invalid
     .content
@@ -143,7 +143,7 @@ export const uiMultiselectCheckbox = {
     <img [hidden]="!imageUrl" src="{{imageUrl}}" />
      {{ label || name }}
   </div>`,
-  sass: `\:host
+  sass: `
   width: 100%
   &:first-child div
     border-left: none
@@ -155,8 +155,8 @@ export const uiMultiselectCheckbox = {
     display: inline-block
     color: $disabled-text
     background-color: $bg-colour
-    border-left: 1px solid $blue-grey
-    border-right: 1px solid $blue-grey
+    border-left: 1px solid #e1e7f6y
+    border-right: 1px solid #e1e7f6y
     padding: 8px 20px
     margin-bottom: 0
     font-size: 11px
@@ -179,7 +179,7 @@ export const uiMultiselectCheckbox = {
     box-sizing: border-box
     &.active
       color: $charcoal
-      background-color: $white
+      background-color: #ffffff
       border-color: $border-colour
       box-shadow: 0 1px 4px 0 rgba(72, 86, 108, 0.15)
     i
@@ -189,8 +189,8 @@ export const uiMultiselectCheckbox = {
       height: 26px
   @media (max-width: 596px)
     div
-      border-top: 1px solid $blue-grey
-      border-bottom: 1px solid $blue-grey`,
+      border-top: 1px solid #e1e7f6y
+      border-bottom: 1px solid #e1e7f6y`,
   ts: `import { MultiSelectRowService } from './multiSelectRowService';
   import { MultiselectRow } from './multiselect-row.component';
   import { Component, Input, Output, EventEmitter, AfterContentInit, OnInit } from '@angular/core';
@@ -412,7 +412,7 @@ export const uiSwitchButton = {
       <span class="onoffswitch-inner"></span>
       <span class="onoffswitch-switch"></span>
   </label>
-</div>`,
+  </div>`,
   ts: `
   import { Component, Input, Self, Optional, ViewChild, ElementRef, OnInit } from '@angular/core';
   import { ControlValueAccessor, NgControl } from '@angular/forms';
@@ -522,6 +522,113 @@ export const uiSwitchButton = {
     margin-left: 0
 
   .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
-    right: 1px
-`
+    right: 1px`
+};
+
+export const uiSecondaryButton = {
+  header: `Secondary Button`,
+  html: ` <button (click)="notifyParent()"
+  class="{{ size }} {{ type }}"
+  [disabled]="disabled">
+{{ label }}
+<i *ngIf="icon"
+class="fa {{icon}}"
+aria-hidden="true"></i>
+</button>`,
+  ts: `import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+  @Component({
+    selector: 'aa-secondary-button',
+    styles: './aa-secondary-button.component.sass',
+    template: './aa-secondary-button.component.html'',
+  })
+
+  export class AASecondaryButton {
+    @Input() label: string;
+    @Input() type: string;
+    @Input() icon: string;
+    @Input() size: string;
+    @Input() disabled: boolean;
+    @Output() modelChanged = new EventEmitter();
+
+    notifyParent() {
+      this.modelChanged.emit();
+    }
+  }
+  `,
+  css: `
+  button
+      display: inline-block
+      margin-bottom: 0
+      font-weight: bold
+      text-align: center
+      vertical-align: middle
+      touch-action: manipulation
+      cursor: pointer
+      background-image: none
+      border: 1px solid transparent
+      border-color: #e1e7f6
+      white-space: nowrap
+      padding-left: 20px
+      padding-right: 20px
+      font-size: 11px
+      border-radius: 3px
+      -webkit-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      background-color: transparent
+      text-transform: uppercase
+      color: #256eff
+      line-height: 15px
+      outline: none
+      transition: background-color .1s linear
+      &:hover
+          color: #1d5ad4
+      &:disabled
+          color: #e1e7f6
+      i
+          padding-left: 5px
+
+  .xsmall
+      width: 40px
+      height: 40px
+      padding: 0
+      border: none
+      background: transparent
+      &:hover
+          border: 1px solid #e1e7f6y
+      &:disabled
+          color: #e1e7f6y
+          border: 1px solid #e1e7f6y
+      i
+          padding: 0
+  .small
+      min-width: 80px
+      height: 20px
+  .medium
+      min-width: 100px
+      height: 37px
+  .large
+      min-width: 150px
+      height: 37px
+
+  .primary
+      background-color: #256eff
+      color: #ffffff
+      &:hover
+          background-color: #1d5ad4
+          color: #ffffff
+      &:disabled
+          background-color: #e1e7f6y
+          color: #ffffff
+  .success
+      background-color: #009900
+      color: #ffffff
+      &:hover
+          background-color: #2b8b2b
+          color: #ffffff
+      &:disabled
+          background-color: #e1e7f6y
+          color: #ffffff`
 };

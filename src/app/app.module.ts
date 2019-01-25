@@ -24,6 +24,7 @@ import { CloseButtonComponent } from './components/shared/close-button/close-but
 import { AaButtonComponent } from './components/shared/aa-button/aa-button.component';
 import { AaSwitchButtonComponent } from './components/shared/aa-switch-button/aa-switch-button.component';
 import { AaSwitchComponent } from './components/ui-examples/aa-switch/aa-switch.component';
+import { AaSecondaryButtonComponent } from './components/ui-examples/aa-secondary-button/aa-secondary-button.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AaSwitchComponent } from './components/ui-examples/aa-switch/aa-switch.
     AaButtonComponent,
     AaSwitchButtonComponent,
     AaSwitchComponent,
+    AaSecondaryButtonComponent,
   ],
   imports: [
     BrowserModule,
