@@ -527,14 +527,15 @@ export const uiSwitchButton = {
 
 export const uiSecondaryButton = {
   header: `Secondary Button`,
-  html: ` <button (click)="notifyParent()"
-  class="{{ size }} {{ type }}"
-  [disabled]="disabled">
-{{ label }}
-<i *ngIf="icon"
-class="fa {{icon}}"
-aria-hidden="true"></i>
-</button>`,
+  html: `
+  <button (click)="notifyParent()"
+    class="{{ size }} {{ type }}"
+    [disabled]="disabled">
+    {{ label }}
+    <i *ngIf="icon"
+    class="fa {{icon}}"
+    aria-hidden="true"></i>
+  </button>`,
   ts: `import { Component, Input, Output, EventEmitter } from '@angular/core';
 
   @Component({
@@ -556,7 +557,7 @@ aria-hidden="true"></i>
     }
   }
   `,
-  css: `
+  sass: `
   button
       display: inline-block
       margin-bottom: 0

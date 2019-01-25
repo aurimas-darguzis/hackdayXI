@@ -1,4 +1,15 @@
-<header>
-	<h1>AA button</h1>
-	<p>AA buttons are </p>
-</header>
+<app-code-snippet
+    [header]="uiSecondaryButton.header"
+    [html]="uiSecondaryButton.html"
+    [sass]="uiSecondaryButton.sass"
+    [ts]="uiSecondaryButton.ts"
+  ></app-code-snippet>
+
+  <div class="preview">
+    <app-aa-secondary-button
+      [label]="'save'"
+      [size]="'medium'"
+      [type]="'primary'"
+      (modelChanged)="mockSave()"
+    ></app-aa-secondary-button>
+  </div>

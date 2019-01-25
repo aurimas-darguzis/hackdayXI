@@ -1,3 +1,8 @@
-<p>
-  aa-secondary-button works!
-</p>
+<button (click)="notifyParent()"
+    class="{{ size }} {{ type }}"
+    [disabled]="disabled">
+    {{ label }}
+    <i *ngIf="icon"
+    class="fa {{icon}}"
+    aria-hidden="true"></i>
+</button>
