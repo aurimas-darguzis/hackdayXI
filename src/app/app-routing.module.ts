@@ -1,3 +1,4 @@
+import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components/components.component';
@@ -10,7 +11,12 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'content', component: ContentComponent },
   { path: 'design', component: DesignComponent },
-  { path: 'components', component: ComponentsComponent },
+  { path: 'components', component: ComponentsComponent,
+    children: [
+      { path: 'buttons', component: CloseButtonComponent }
+    ]
+},
+  // { path: 'components', component: ComponentsComponent },
 ];
 
 @NgModule({

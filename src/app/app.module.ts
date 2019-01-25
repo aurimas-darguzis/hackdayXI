@@ -20,6 +20,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PrismModule } from '@ngx-prism/core';
 import { CodeSnippetComponent } from './components/shared/code-snippet/code-snippet.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     ComponentsComponent,
     HomeComponent,
     CodeSnippetComponent,
+    CloseButtonComponent,
   ],
   imports: [
     BrowserModule,
