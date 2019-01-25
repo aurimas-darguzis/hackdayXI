@@ -1,0 +1,15 @@
+<header>{{header}}</header>
+<tabset>
+  <tab heading="HTML">
+    <i class="far fa-clone" tooltip="{{tooltip}}" (click)="onCopy($event)"></i>
+    <ngx-prism [language]="'html'" [code]="html"></ngx-prism>
+  </tab>
+  <tab heading="SASS">
+    <i class="far fa-clone" tooltip="{{tooltip}}" (click)="onCopy($event)"></i>
+    <ngx-prism [language]="'sass'" [code]="sass"></ngx-prism>
+  </tab>
+  <tab heading="TS">
+    <i class="far fa-clone" tooltip="{{tooltip}}" (click)="onCopy($event)"></i>
+    <ngx-prism [language]="'typescript'" [code]="ts"></ngx-prism>
+  </tab>
+</tabset>
