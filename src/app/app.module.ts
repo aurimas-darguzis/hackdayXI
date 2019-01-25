@@ -22,6 +22,7 @@ import { CodeSnippetComponent } from './components/shared/code-snippet/code-snip
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
 import { AaButtonComponent } from './components/shared/aa-button/aa-button.component';
+import { AaSwitchButtonComponent } from './components/shared/aa-switch-button/aa-switch-button.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AaButtonComponent } from './components/shared/aa-button/aa-button.compo
     CodeSnippetComponent,
     CloseButtonComponent,
     AaButtonComponent,
+    AaSwitchButtonComponent,
   ],
   imports: [
     BrowserModule,

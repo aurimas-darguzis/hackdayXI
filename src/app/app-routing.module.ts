@@ -1,3 +1,4 @@
+import { AaSwitchButtonComponent } from './components/shared/aa-switch-button/aa-switch-button.component';
 import { AaButtonComponent } from './components/shared/aa-button/aa-button.component';
 import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,10 +16,10 @@ const routes: Routes = [
   { path: 'components', component: ComponentsComponent,
     children: [
       { path: 'closeButton', component: CloseButtonComponent, pathMatch: 'full' },
-      { path: 'aaButton', component: AaButtonComponent, pathMatch: 'full' }
+      { path: 'aaButton', component: AaButtonComponent, pathMatch: 'full' },
+      { path: 'switchButton', component: AaSwitchButtonComponent, pathMatch: 'full' }
     ]
 },
-  // { path: 'components', component: ComponentsComponent },
 ];
 
 @NgModule({

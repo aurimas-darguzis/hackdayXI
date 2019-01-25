@@ -398,3 +398,127 @@ export const uiDropDown = {
           width: 15px
           height: 21px`
 };
+
+export const uiSwitchButton = {
+  header: `Switch Button`,
+  html: `<div class="onoffswitch">
+  <input
+   #checkbox
+   type="checkbox"
+   class="onoffswitch-checkbox"
+   id="{{id}}-onoffswitch"
+   />
+  <label class="onoffswitch-label" for="{{name}}-onoffswitch" (click)="handleChange(checkbox.checked)">
+      <span class="onoffswitch-inner"></span>
+      <span class="onoffswitch-switch"></span>
+  </label>
+</div>`,
+  ts: `
+  import { Component, Input, Self, Optional, ViewChild, ElementRef, OnInit } from '@angular/core';
+  import { ControlValueAccessor, NgControl } from '@angular/forms';
+
+  @Component({
+    selector: 'aa-switch-button',
+    styles: './aa-switch-button.component.sass',
+    template: './aa-switch-button.component.html',
+  })
+  export class AASwitchButton implements ControlValueAccessor {
+    @Input() name: string;
+    @Input() id: string;
+    @ViewChild('checkbox') checkbox: ElementRef;
+    onChange: any;
+
+    handleChange (value: boolean) {
+      this.onChange(!value);
+    }
+
+    constructor(
+      @Optional() @Self() public controlDir: NgControl,
+      ) {
+      if (controlDir) controlDir.valueAccessor = this;
+    }
+
+    public writeValue(isOn: boolean): void {
+      this.checkbox.nativeElement.checked = isOn;
+    }
+
+    public registerOnChange(fn: boolean) {
+      this.onChange = fn;
+    }
+
+    public registerOnTouched(fn: () => void): void {}
+  }
+  `,
+  sass: `
+  \:host
+  .onoffswitch
+    position: relative
+    width: 58px
+    user-select: none
+
+  .onoffswitch-checkbox
+    display: none
+
+  .onoffswitch-inner
+    display: block
+    width: 200%
+    margin-left: -100%
+    transition: margin 0.3s ease-in 0s
+
+  .onoffswitch-inner:before, .onoffswitch-inner:after
+    display: block
+    float: left
+    width: 50%
+    height: 21px
+    padding: 0
+    line-height: 22px
+    font-size: 10px
+    font-weight: normal
+    color: #ffffff
+    box-sizing: border-box
+
+  .onoffswitch-inner:before
+    content: "ON"
+    padding-left: 10px
+    background-color: $blue
+    color: #ffffff
+
+  .onoffswitch-inner:after
+    content: "OFF"
+    padding-right: 10px
+    background-color: #e1e7f6
+    color: #f5f5f5
+    text-align: right
+
+  .onoffswitch-switch
+    &.onoffswitch-switch-hide
+      display: none
+
+  .onoffswitch-switch
+    display: block
+    width: 17px
+    height: 17px
+    margin: 2.5px
+    background: #ffffff
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 36px
+    border: 1px solid #fbfcfe
+    border-radius: 3px
+    transition: all 0.3s ease-in 0s
+
+  label.onoffswitch-label
+    display: block
+    overflow: hidden
+    cursor: pointer
+    border: 1px solid #fbfcfe
+    border-radius: 3px
+    height: 23px
+
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
+    margin-left: 0
+
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
+    right: 1px`
+};
