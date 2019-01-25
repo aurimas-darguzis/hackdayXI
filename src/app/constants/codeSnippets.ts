@@ -401,20 +401,27 @@ export const uiDropDown = {
 
 export const uiSwitchButton = {
   header: `Switch Button`,
-  html: `<div class="onoffswitch">
-  <input
-   #checkbox
-   type="checkbox"
-   class="onoffswitch-checkbox"
-   id="{{id}}-onoffswitch"
-   />
-  <label class="onoffswitch-label" for="{{name}}-onoffswitch" (click)="handleChange(checkbox.checked)">
-      <span class="onoffswitch-inner"></span>
-      <span class="onoffswitch-switch"></span>
-  </label>
+  html: `
+  <div class="onoffswitch">
+    <input
+    #checkbox
+    type="checkbox"
+    class="onoffswitch-checkbox"
+    id="{{id}}-onoffswitch"
+    />
+    <label
+      class="onoffswitch-label"
+      for="{{name}}-onoffswitch"
+      (click)="handleChange(checkbox.checked)">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
   </div>`,
   ts: `
-  import { Component, Input, Self, Optional, ViewChild, ElementRef, OnInit } from '@angular/core';
+  import {
+    Component, Input,
+    Self, Optional,
+    ViewChild, ElementRef, OnInit } from '@angular/core';
   import { ControlValueAccessor, NgControl } from '@angular/forms';
 
   @Component({
