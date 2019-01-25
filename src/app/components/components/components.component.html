@@ -1,22 +1,55 @@
 <div class="container">
-  <div class="sidenav">sidenav</div>
+  <div class="sidenav"></div>
 
   <div class="mainContent">
-      <div class="card">
-        <div class="header">
-          <span class="name">Buttons & Indicators</span>
-        </div>
-        <div class="cardContent">
-          <mat-tab-group>
-              <mat-tab label="HTML"> Content 1 </mat-tab>
-              <mat-tab label="TS"> Content 2 </mat-tab>
-              <mat-tab label="CSS"> Content 3 </mat-tab>
-          </mat-tab-group>
-        </div>
-        <div class="cardFooter">
-          footer
-        </div>
-      </div>
+
+  <h1>Buttons & Indicators</h1>
+
+  <app-code-snippet
+    [header]="closeButton.header"
+    [html]="closeButton.html"
+    [sass]="closeButton.sass"
+    [ts]="closeButton.ts"
+  >
+  </app-code-snippet>
+
+  <div class="preview">
+      <div class="aa-close-button fa fa-times"></div>
+  </div>
+
+  <hr>
+  <app-code-snippet
+    [header]="uiMultiSelectRow.header"
+    [html]="uiMultiSelectRow.html"
+    [sass]="uiMultiSelectRow.sass"
+    [ts]="uiMultiSelectRow.ts"
+  >
+  </app-code-snippet>
+  <app-code-snippet
+    [header]="uiMultiselectCheckbox.header"
+    [html]="uiMultiselectCheckbox.html"
+    [sass]="uiMultiselectCheckbox.sass"
+    [ts]="uiMultiselectCheckbox.ts"
+  >
+  </app-code-snippet>
+
+  <div class="preview">
+    multiselect preview
+  </div>
+
+  <hr>
+
+  <app-code-snippet
+    [header]="uiDropDown.header"
+    [html]="uiDropDown.html"
+    [sass]="uiDropDown.sass"
+    [ts]="uiDropDown.ts"
+  >
+  </app-code-snippet>
+  <div class="preview">
+    ui dropdown preview
+  </div>
+
   </div>
 
 </div>
