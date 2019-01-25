@@ -23,7 +23,6 @@ export class CodeSnippetComponent implements OnInit {
     const elToCopy = e.srcElement.parentElement.getAttribute('heading').toLowerCase();
 
     console.log('labas', elToCopy);
-    // console.log('labas', e.srcElement.parentNode.attributes);
     console.log('elToCopy', elToCopy );
     this.tooltip = 'Copied!';
   }

@@ -1,0 +1,12 @@
+<div class="onoffswitch">
+    <input
+     #checkbox
+     type="checkbox"
+     class="onoffswitch-checkbox"
+     id="{{id}}-onoffswitch"
+     />
+    <label class="onoffswitch-label" for="{{name}}-onoffswitch" (click)="handleChange(checkbox.checked)">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>

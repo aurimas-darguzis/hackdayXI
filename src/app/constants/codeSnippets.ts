@@ -418,11 +418,11 @@ export const uiSwitchButton = {
   import { ControlValueAccessor, NgControl } from '@angular/forms';
 
   @Component({
-    selector: 'aa-switch-button',
-    styles: './aa-switch-button.component.sass',
-    template: './aa-switch-button.component.html',
+    selector: 'app-aa-switch',
+    templateUrl: './aa-switch.component.html',
+    styleUrls: ['./aa-switch.component.sass']
   })
-  export class AASwitchButton implements ControlValueAccessor {
+  export class AaSwitchComponent implements ControlValueAccessor {
     @Input() name: string;
     @Input() id: string;
     @ViewChild('checkbox') checkbox: ElementRef;
@@ -435,7 +435,9 @@ export const uiSwitchButton = {
     constructor(
       @Optional() @Self() public controlDir: NgControl,
       ) {
-      if (controlDir) controlDir.valueAccessor = this;
+      if (controlDir ) {
+        controlDir.valueAccessor = this;
+      }
     }
 
     public writeValue(isOn: boolean): void {
@@ -448,9 +450,9 @@ export const uiSwitchButton = {
 
     public registerOnTouched(fn: () => void): void {}
   }
+
   `,
   sass: `
-  \:host
   .onoffswitch
     position: relative
     width: 58px
@@ -480,7 +482,7 @@ export const uiSwitchButton = {
   .onoffswitch-inner:before
     content: "ON"
     padding-left: 10px
-    background-color: $blue
+    background-color: #256eff
     color: #ffffff
 
   .onoffswitch-inner:after
@@ -520,5 +522,6 @@ export const uiSwitchButton = {
     margin-left: 0
 
   .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
-    right: 1px`
+    right: 1px
+`
 };

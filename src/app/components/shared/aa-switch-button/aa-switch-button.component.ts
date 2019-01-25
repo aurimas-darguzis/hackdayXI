@@ -1,5 +1,6 @@
 import { uiSwitchButton } from './../../../constants/codeSnippets';
 import { Component, OnInit } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-aa-switch-button',

@@ -23,6 +23,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CloseButtonComponent } from './components/shared/close-button/close-button.component';
 import { AaButtonComponent } from './components/shared/aa-button/aa-button.component';
 import { AaSwitchButtonComponent } from './components/shared/aa-switch-button/aa-switch-button.component';
+import { AaSwitchComponent } from './components/ui-examples/aa-switch/aa-switch.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AaSwitchButtonComponent } from './components/shared/aa-switch-button/aa
     CloseButtonComponent,
     AaButtonComponent,
     AaSwitchButtonComponent,
+    AaSwitchComponent,
   ],
   imports: [
     BrowserModule,
